@@ -9,6 +9,13 @@ class UzuEvent {
 		console.log("DEBUG: opening uzu ticket frame");
 		const eventId = this.eventId;
 
+		console.log({ eventId });
+
+		const span = document.createElement("span");
+		span.id = "uzu-event-id-container";
+		span.style.display = "none";
+		span.textContent = eventId;
+
 		const uzuTicketIframe = document.createElement("iframe");
 		uzuTicketIframe.id = "uzuTicketFrame";
 		uzuTicketIframe.src = `https://confident-mccarthy-204cef.netlify.app/?event=${eventId}`;
@@ -19,6 +26,8 @@ class UzuEvent {
 		uzuTicketIframe.style.width = "100%";
 		uzuTicketIframe.style.zIndex = "10000";
 		uzuTicketIframe.style.backgroundColor = "rgba(0,0,0, 0.5)";
+
+		uzuTicketIframe.appendChild(span);
 
 		// add close button
 		const closeBtn = document.createElement("button");
