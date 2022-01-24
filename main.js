@@ -17,6 +17,7 @@ class UzuEvent {
 		span.textContent = eventId;
 
 		const uzuTicketIframe = document.createElement("iframe");
+		uzuTicketIframe.name = eventId;
 		uzuTicketIframe.id = "uzuTicketFrame";
 		uzuTicketIframe.src = `https://confident-mccarthy-204cef.netlify.app/?event=${eventId}`;
 		uzuTicketIframe.style.position = "fixed";
