@@ -7,10 +7,11 @@ class UzuEvent {
 
 	open() {
 		console.log("DEBUG: opening uzu ticket frame");
+		const eventId = this.eventId;
 
 		const uzuTicketIframe = document.createElement("iframe");
 		uzuTicketIframe.id = "uzuTicketFrame";
-		uzuTicketIframe.src = "https://confident-mccarthy-204cef.netlify.app/";
+		uzuTicketIframe.src = `https://confident-mccarthy-204cef.netlify.app/?event=${eventId}`;
 		uzuTicketIframe.style.position = "fixed";
 		uzuTicketIframe.style.top = "0";
 		uzuTicketIframe.style.left = "0";
